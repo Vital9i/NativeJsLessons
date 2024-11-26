@@ -55,22 +55,56 @@ const newUsers = [
     },
 ]
 
-const users2=[...users,newUsers[0]]
+const users2 = [...users, newUsers[0]]
 console.log(users2)
 
 //удаление через елемента массива через цикл и метод splice
-const users3=[...users2]
+const users3 = [...users2]
 let index;
-for (let i=0;i< users3.length;i++) {
-    if(users3[i].id === 3){
-        index=i
+for (let i = 0; i < users3.length; i++) {
+    if (users3[i].id === 3) {
+        index = i
     }
 }
-users3.splice(index,1)
+users3.splice(index, 1)
 console.log(users3)
 
 
 //удаление элемента массива через метод filter
-const users4=users2.filter(user => user.id !==3)
+const users4 = users2.filter(user => user.id !== 3)
 console.log(users4)
+
+const superUser = {
+    id: 10,
+    name: 'Moriah',
+    ueseername: 'rfasabv',
+    email: 'hshhdh@gmail.com',
+    address: {
+        street: 'WalkinStreet',
+        suite: 'stnn2134',
+        city: 'Minsk',
+        zipcode: 'teht5e4',
+        geo: {
+            lat: 'thwe54e234',
+            lng: 'thsh',
+        },
+    },
+    phone: '+24363266',
+    website: 'www.htsh.com',
+    company: {
+        name: 'wthhbebe',
+        catchPhrase: 'enrrnvtrehntMFK',
+        bs: 'ern rehr-treh',
+    },
+}
+
+const superUser2 = {...superUser,phone:'+37525252'}
+console.log(superUser2)
+
+const superUser3 = {...superUser,company:{...superUser.company, catchPhrase: 'Hello'}}
+console.log(superUser3)
+
+const superUser4 ={...superUser,address:{...superUser.address,geo:{...superUser.address.geo,lat:'newLat'}}}
+console.log(superUser4)
+
 
